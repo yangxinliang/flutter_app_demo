@@ -1,0 +1,29 @@
+PODS:
+  - AliyunOSSiOS (2.10.7)
+  - Flutter (1.0.0)
+  - flutter_plugin_test (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - AliyunOSSiOS
+  - Flutter (from `.symlinks/flutter/ios`)
+  - flutter_plugin_test (from `.symlinks/plugins/flutter_plugin_test/ios`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AliyunOSSiOS
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: ".symlinks/flutter/ios"
+  flutter_plugin_test:
+    :path: ".symlinks/plugins/flutter_plugin_test/ios"
+
+SPEC CHECKSUMS:
+  AliyunOSSiOS: 602b6a4e70e62a5f0a6431c20496343141d7e66f
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  flutter_plugin_test: 0ec12ed83b7f0e48945b44f4c32d9868e5310b97
+
+PODFILE CHECKSUM: 3c52e8c90eac7fee9f8e83f48665ee1e2cdd5556
+
+COCOAPODS: 1.7.1

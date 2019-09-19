@@ -26,7 +26,7 @@ class NewRoute extends StatefulWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         new Icon(icon, color: color),
-        new Text("第二个"),
+        new Text("第一个"),
         new Container(
           margin: const EdgeInsets.only(top: 8.0),
           child: new Text(

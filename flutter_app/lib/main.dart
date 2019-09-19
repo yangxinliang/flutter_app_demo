@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title: "Fiist Flutter Demo ",
+      title: "Flutetr常用组件集合 ",
       theme: new ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -104,7 +104,6 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: new FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: "Increment",
-//          child: new Icon(Incons.add),
       ),
     );
   }

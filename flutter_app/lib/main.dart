@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "new_page": (context) => NewRoute(),
       },
-      home: new MyHomePage(title: "wowowoowowowowo"),
+      home: new MyHomePage(title: "Flutter常用组件集合"),
     );
   }
 }

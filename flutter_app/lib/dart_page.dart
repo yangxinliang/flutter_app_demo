@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'dart_demo_page.dart';
+
 class DemoDart extends StatefulWidget {
   final String title;
 
@@ -25,6 +27,11 @@ class _DemoDartState extends State<DemoDart> {
               title: Text(_dartList[index]),
               onTap: () {
                 print("$index");
+
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => DartDemoTest(
+                          title: _dartList[index],
+                        )));
               },
             );
           },
@@ -34,8 +41,6 @@ class _DemoDartState extends State<DemoDart> {
               color: Colors.blue,
             );
           },
-        )
-
-    );
+        ));
   }
 }

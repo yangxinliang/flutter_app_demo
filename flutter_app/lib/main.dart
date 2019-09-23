@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/widget_page.dart';
 
+import 'dart_demo_page.dart';
 import 'dart_page.dart';
 
 
@@ -16,7 +17,9 @@ class MyApp extends StatelessWidget {
       // 注册路由表
       routes: {
         "dart_page": (context) => DemoDart(),
-        "widget_page": (context) => DemoWidget()
+        "widget_page": (context) => DemoWidget(),
+//        "dart_demo_test": (context,{arguments}) => DartDemoTest(arguments)
+
       },
       home: new MyHomePage(title: "Flutter"),
     );
@@ -70,3 +73,5 @@ class _MyHomePageState extends State<MyHomePage> {
         ));
   }
 }
+
+

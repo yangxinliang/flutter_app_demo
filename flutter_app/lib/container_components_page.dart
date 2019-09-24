@@ -5,22 +5,50 @@ class ContainerWidget extends StatefulWidget {
   _ContainerWidgetState createState() => _ContainerWidgetState();
 }
 
-class _ContainerWidgetState extends State<ContainerWidget> {
+// 使用TabController(length: tabs.length, vsync: this) 需要 SingleTickerProviderStateMixin
+class _ContainerWidgetState extends State<ContainerWidget>
+    with SingleTickerProviderStateMixin {
+  int _selectedIndex = 1;
+  //需要定义 tab一个Controller
+  TabController _tabController;
+  List tabs = ["测试一", "测试二", "测试三"];
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    // 创建Controller
+    _tabController = TabController(length: tabs.length, vsync: this);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("容器类组件"),
-      ),
-      body: Container(
-          color: Colors.lightGreen,
-          margin: EdgeInsets.only(left: 20, top: 50),
-//        height: 40,
-//        width: 200,
-//        height: 20,
+    return _configScaffoldAndTabBar();
 
-          child: _configContainer()),
-    );
+//      Scaffold(
+//      appBar: AppBar( // 导航栏的配置
+//        title: Text("容器类组件"),
+
+//      ),
+//      // 左侧抽屉配置
+////      drawer: ,
+//       // 右侧抽屉配置
+////      endDrawer: ,
+//      // 页面的主内容配置
+//      body: Container(
+//          color: Colors.lightGreen,
+//          margin: EdgeInsets.only(left: 20, top: 50),
+////        height: 40,
+////        width: 200,
+////        height: 20,
+//
+//          child: _configContainer()
+//      ),
+//      // 显示在底部的导航栏
+//      //bottomNavigationBar: ,
+//
+//
+//    );
   }
 
   //Padding可以给其子节点添加填充（留白），和边距效果类似。我们在前面很多示例中都已经使用过它了
@@ -132,10 +160,8 @@ class _ContainerWidgetState extends State<ContainerWidget> {
 //  // 它是DecoratedBox、ConstrainedBox、Transform、Padding、Align等组件组合的一个多功能容器，
 //  // 所以我们只需通过一个Container组件可以实现同时需要装饰、变换、限制的场景
   Widget _configContainer() {
-
     return Column(
       children: <Widget>[
-
         //
 //    Container({
 //    this.alignment, // 子组件的对齐方式
@@ -155,7 +181,7 @@ class _ContainerWidgetState extends State<ContainerWidget> {
           constraints:
               BoxConstraints.tightFor(width: 200.0, height: 150.0), //卡片大小
           decoration: BoxDecoration(
-               color: Colors.yellow,
+              color: Colors.yellow,
               //背景装饰
               gradient: RadialGradient(
                   //背景径向渐变
@@ -189,12 +215,63 @@ class _ContainerWidgetState extends State<ContainerWidget> {
           color: Colors.orange,
           child: Text("Hello world!"),
         ),
-
-
-
-
-
       ],
     );
   }
+
+  // Scaffold是一个路由页的骨架，我们使用它可以很容易地拼装出一个完整的页面
+  // TabBar
+  Widget _configScaffoldAndTabBar() {
+    // 页面脚手架
+    return Scaffold(
+//        AppBar({
+//        Key key,
+//        this.leading, //导航栏最左侧Widget，常见为抽屉菜单按钮或返回按钮。
+//        this.automaticallyImplyLeading = true, //如果leading为null，是否自动实现默认的leading按钮
+//        this.title,// 页面标题
+//        this.actions, // 导航栏右侧菜单
+//        this.bottom, // 导航栏底部菜单，通常为Tab按钮组
+//        this.elevation = 4.0, // 导航栏阴影
+//        this.centerTitle, //标题是否居中
+//        this.backgroundColor,
+//        ...   //其它属性见源码注释
+//        })
+      appBar: AppBar(
+        // 导航栏的配置
+        title: Text("容器类组件"),
+        // 导航栏右侧菜单栏
+        //actions: <Widget>[],
+
+        bottom: TabBar(
+            //生成Tab菜单
+            controller: _tabController,
+            tabs: tabs.map((e) => Tab(text: e)).toList()),
+      ),
+      // 左侧抽屉效果
+      // drawer: ,
+      //右侧抽屉效果
+//      endDrawer: ,
+      // BottomNavigationBar 底部导航栏
+      bottomNavigationBar: BottomNavigationBar(
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home')),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.business), title: Text('Business')),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.school), title: Text('School')),
+        ],
+        currentIndex: _selectedIndex,
+        fixedColor: Colors.blue,
+        onTap: _onItemTapped,
+      ),
+    );
+  }
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  void _onAdd() {}
 }

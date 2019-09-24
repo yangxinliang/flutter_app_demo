@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'basic_components_page.dart';
+import 'container_components_page.dart';
 import 'layout_components_page.dart';
 
 class DemoWidget extends StatefulWidget {
@@ -35,6 +36,10 @@ class _DemoWidgetState extends State<DemoWidget> {
                } else if (index == 1) {
                  Navigator.of(context).push(MaterialPageRoute(
                      builder: (context) => LayoutWidget()));
+               } else if (index == 2 ) {
+                 Navigator.of(context).push(MaterialPageRoute(
+                     builder: (context) => ContainerWidget()));
+
                }
 
 

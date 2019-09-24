@@ -6,16 +6,40 @@ class RollingWidget extends StatefulWidget {
 }
 
 class _RollingWidgetState extends State<RollingWidget> {
+
+  // 监听 滚动位置的对象
+  ScrollController _controller =  ScrollController();
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    //监听滚动事件，打印滚动位置
+    _controller.addListener(() {
+      print(_controller.offset); //打印滚动位置
+
+      });
+
+  }
+  @override
+  void dispose() {
+    //为了避免内存泄露，需要调用_controller.dispose
+    _controller.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
-    return _configCustomScrollView();
+    return
+//      _configCustomScrollView();
 
-//      Scaffold(
-//      appBar: AppBar(
-//        title: Text("滚动的组件"),
-//      ),
-//      body: _configGridbuilder(),
-//    );
+      Scaffold(
+      appBar: AppBar(
+        title: Text("滚动的组件"),
+      ),
+      body: _configSingleChildScrollView(),
+    );
   }
 
   // SingleChildScrollView类似于Android中的ScrollView，它只能接收一个子组件
@@ -35,6 +59,7 @@ class _RollingWidgetState extends State<RollingWidget> {
     return Scrollbar(
       // 显示进度条
       child: SingleChildScrollView(
+        controller: _controller,
         padding: EdgeInsets.all(16.0), // 子控件到父控件 间距
         child: Center(
           child: Column(

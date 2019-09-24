@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/rolling_componernts_page.dart';
 
 import 'basic_components_page.dart';
 import 'container_components_page.dart';
@@ -39,6 +40,10 @@ class _DemoWidgetState extends State<DemoWidget> {
                } else if (index == 2 ) {
                  Navigator.of(context).push(MaterialPageRoute(
                      builder: (context) => ContainerWidget()));
+
+               }else if (index == 3 ) {
+                 Navigator.of(context).push(MaterialPageRoute(
+                     builder: (context) => RollingWidget()));
 
                }
 

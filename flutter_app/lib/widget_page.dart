@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'basic_components_page.dart';
+import 'layout_components_page.dart';
 
 class DemoWidget extends StatefulWidget {
   @override
@@ -31,7 +32,9 @@ class _DemoWidgetState extends State<DemoWidget> {
                      builder: (context) => BasicWidget(
                        title: _widgetList[index],
                      )));
-
+               } else if (index == 1) {
+                 Navigator.of(context).push(MaterialPageRoute(
+                     builder: (context) => LayoutWidget()));
                }
 
 

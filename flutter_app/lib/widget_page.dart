@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'basic_components_page.dart';
+
 class DemoWidget extends StatefulWidget {
   @override
   _DemoWidgetState createState() => _DemoWidgetState();
@@ -23,6 +25,16 @@ class _DemoWidgetState extends State<DemoWidget> {
             title: Text(_widgetList[index]),
             onTap: () {
               print("$index");
+
+               if (index == 0) {
+                 Navigator.of(context).push(MaterialPageRoute(
+                     builder: (context) => BasicWidget(
+                       title: _widgetList[index],
+                     )));
+
+               }
+
+
             },
           );
         },

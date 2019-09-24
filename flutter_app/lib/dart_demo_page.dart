@@ -11,11 +11,11 @@ class DartDemoTest extends StatefulWidget {
 
 class _DartDemoTestState extends State<DartDemoTest> {
   // 明确声明
-
   String name = "yangxinlang";
   int age = 20;
   double height = 1.88;
 
+  // 类型推断声明变量
   var demo = List();
 
   List<int> demos = List();
@@ -72,8 +72,32 @@ void test(String name, {int age, double height}) {
   print('name=$name age=$age height=$height');
 }
 
+// 位置可选参数示例
+void testMethod(String name,[int age = 18,double height = 170.0]) {
+
+}
+
+
+// 定义一个函数
+foo (String name) {
+
+  print(name);
+
+}
+
+demoFun(Function func) {
+
+
+}
+
+
+
+
 //自定义一个类 类通常有两部分组成： 成员（member）和方法（method）
 class Person {
+  // 赋值一个函数
+  var testMethod = foo;
+
   // 成员变量
   String name;
 
@@ -100,6 +124,10 @@ class Person {
   // 实例方法
   void eat() {
     print("吃东西");
+    testMethod("dasadas");
+    // 函数可以当参数
+    demoFun(foo("dasda"));
+
   }
 
   // 类方法

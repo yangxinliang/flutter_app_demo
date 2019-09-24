@@ -3,6 +3,7 @@ import 'package:flutter_app/rolling_componernts_page.dart';
 
 import 'basic_components_page.dart';
 import 'container_components_page.dart';
+import 'functional_components_page.dart';
 import 'layout_components_page.dart';
 
 class DemoWidget extends StatefulWidget {
@@ -45,7 +46,12 @@ class _DemoWidgetState extends State<DemoWidget> {
                  Navigator.of(context).push(MaterialPageRoute(
                      builder: (context) => RollingWidget()));
 
+               }else if (index == 4 ) {
+                 Navigator.of(context).push(MaterialPageRoute(
+                     builder: (context) => FunctionalWidget()));
+
                }
+
 
 
             },

@@ -24,12 +24,12 @@ class _BasicWidgetState extends State<BasicWidget> {
       ),
       body: Container(
 //        color: Colors.yellow,
-        margin: EdgeInsets.only(left: 20, top: 50),
-        height: 40,
-        width: 200,
+        margin: EdgeInsets.only(left: 20, top: 20),
+//        height: 40,
+//        width: 200,
 //        height: 20,
 
-        child: _configTextField(),
+        child: _configImage(),
       ),
     );
   }
@@ -118,10 +118,20 @@ class _BasicWidgetState extends State<BasicWidget> {
         // 加载网路图片
         Image(
           image: NetworkImage(
-              "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2960932577,277299827&fm=26&gp=0.jpg"),
-          width: 400, // 图片的宽度
-          height: 400, // 图片的高度
+              "https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=eea934627f8da9775a228e79d138937c/b3b7d0a20cf431ad6fd6b4684736acaf2edd985f.jpg"),
+          width: 200, // 图片的宽度
+          height: 200, // 图片的高度
         ),
+        // 带有占位图加载网路图片 组件
+        FadeInImage.assetNetwork(
+          placeholder: "https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=eea934627f8da9775a228e79d138937c/b3b7d0a20cf431ad6fd6b4684736acaf2edd985f.jpg",
+          image: "", // 背景图片名称
+          width: 100,
+          height: 100,
+          fit: BoxFit.fill,
+        ),
+
+
         // 系统还自带了一些 icon 图标
         Icon(
           Icons.accessible,

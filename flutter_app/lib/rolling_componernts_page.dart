@@ -32,14 +32,14 @@ class _RollingWidgetState extends State<RollingWidget> {
   @override
   Widget build(BuildContext context) {
     return
-//      _configCustomScrollView();
+      _configCustomScrollView();
 
-      Scaffold(
-      appBar: AppBar(
-        title: Text("滚动的组件"),
-      ),
-      body: _configSingleChildScrollView(),
-    );
+//      Scaffold(
+//      appBar: AppBar(
+//        title: Text("滚动的组件"),
+//      ),
+//      body: _configCustomScrollView(),
+//    );
   }
 
   // SingleChildScrollView类似于Android中的ScrollView，它只能接收一个子组件
@@ -257,6 +257,8 @@ class _RollingWidgetState extends State<RollingWidget> {
               ),
             ),
           ),
+
+
           //List 加载控件
           new SliverFixedExtentList(
             itemExtent: 50.0,

@@ -31,6 +31,15 @@ class _DartDemoTestState extends State<DartDemoTest> {
     // 级联操作
 //    Person p = Person()..name = "dada"..sex = "男";
 
+     /**对枚举的一些操作**/
+    // 获取枚举中的具体值
+    var currentSeason = Season.spring;
+    // 获取spring 在枚举中的位置
+    var index = Season.spring.index;
+
+    // values 包含每个枚举值的List
+    var seaSon = Season.values;
+
   }
 
   @override
@@ -94,7 +103,6 @@ demoFun(Function func) {
 
 
 }
-
 
 
 //自定义一个类 类通常有两部分组成： 成员（member）和方法（method）
@@ -243,18 +251,28 @@ mixin Flyer {
   }
 }
 
+// implements的方式要求必须对其中的方法进行重新实现
+// class SuperMan implements Runner, Flyer {}
+
 // 此时 demo 同时有 run 和 fly 方法
 class Demo with Runner,Flyer {
+
+
 
 }
 
 // 使用 enum 来定义一个枚举
-enum _Colors {
-  red,
-  green,
-  blue
+enum Season {
+  spring,
+  summer,
+  autumn,
+  winter
 
 }
+
+
+
+
 
 
 

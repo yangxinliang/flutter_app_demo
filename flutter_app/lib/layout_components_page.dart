@@ -103,6 +103,8 @@ class _LayoutWidgetState extends State<LayoutWidget> {
             child: Text("Row1"),
           ),
         ),
+       Text("Row1"),
+
         Text("Row2"),
       ],
     );
@@ -126,22 +128,22 @@ class _LayoutWidgetState extends State<LayoutWidget> {
             Chip(
               avatar:
                   CircleAvatar(backgroundColor: Colors.blue, child: Text('A')),
-              label: Text('Hamilton'),
+              label: Text('Chip测试1'),
             ),
             Chip(
               avatar:
                   CircleAvatar(backgroundColor: Colors.blue, child: Text('M')),
-              label: Text('Lafayette'),
+              label: Text('Chip测试2'),
             ),
             Chip(
               avatar:
                   CircleAvatar(backgroundColor: Colors.blue, child: Text('H')),
-              label: Text('Mulligan'),
+              label: Text('Chip测试3'),
             ),
             Chip(
               avatar:
                   CircleAvatar(backgroundColor: Colors.blue, child: Text('J')),
-              label: Text('Laurens'),
+              label: Text('Chip测试4'),
             ),
           ],
         ),
@@ -208,7 +210,7 @@ class _LayoutWidgetState extends State<LayoutWidget> {
         children: <Widget>[
           // 确定子组件 在stack 中的位置 left
           //left、top 、right、 bottom分别代表离Stack左、上、右、底四边的距离。width和height用于指定需要定位元素的宽度和高度。
-          Positioned(left: 10, child: Text("测试 stack"))
+          Positioned(left: 20,top: 20, child: Text("测试 stack"))
         ],
       ),
     );

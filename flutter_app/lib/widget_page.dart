@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/rolling_componernts_page.dart';
+import 'package:flutter_app/work_plan_page.dart';
 
 import 'basic_components_page.dart';
 import 'container_components_page.dart';
@@ -14,7 +15,7 @@ class DemoWidget extends StatefulWidget {
 class _DemoWidgetState extends State<DemoWidget> {
 
   //定义一个装有widget的类名的数组
-  List _widgetList = ["基础组件", "布局类组件", "容器类组件", "可滚动组件", "功能性"];
+  List _widgetList = ["基础组件", "布局类组件", "容器类组件", "可滚动组件", "功能性","工作计划"];
 
   @override
   Widget build(BuildContext context) {
@@ -49,6 +50,10 @@ class _DemoWidgetState extends State<DemoWidget> {
                }else if (index == 4 ) {
                  Navigator.of(context).push(MaterialPageRoute(
                      builder: (context) => FunctionalWidget()));
+
+               }else if (index == 5) {
+                 Navigator.of(context).push(MaterialPageRoute(
+                     builder: (context) => STWorkPlanPage()));
 
                }
 

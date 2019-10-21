@@ -9,31 +9,22 @@ class _FunctionalWidgetState extends State<FunctionalWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       appBar: AppBar(
-
         title: Text("Toast组件"),
-
       ),
-
       body: Container(
-
-        margin: EdgeInsets.only(left: 20,top: 50),
+        margin: EdgeInsets.only(left: 20, top: 50),
         child: Column(
-
-
           children: <Widget>[
-
             FlatButton(
               color: Colors.blue,
               highlightColor: Colors.blue[700],
               colorBrightness: Brightness.dark,
               splashColor: Colors.grey,
               child: Text("对话框1"),
-              shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0)),
               onPressed: () {
-
                 print("dad");
 //                _configAlertDialog();
 
@@ -42,18 +33,11 @@ class _FunctionalWidgetState extends State<FunctionalWidget> {
 //                changeLanguage();
 
                 showDeleteConfirmCustomDialog();
-
               },
             ),
-
-
-
           ],
-
         ),
-
       ),
-
     );
   }
 
@@ -83,7 +67,7 @@ class _FunctionalWidgetState extends State<FunctionalWidget> {
     );
   }
 
- // SimpleDialog
+  // SimpleDialog
   Future<void> changeLanguage() async {
     int i = await showDialog<int>(
         context: context,
@@ -130,14 +114,14 @@ class _FunctionalWidgetState extends State<FunctionalWidget> {
             ListTile(title: Text("请选择")),
             Expanded(
                 child: ListView.builder(
-                  itemCount: 30,
-                  itemBuilder: (BuildContext context, int index) {
-                    return ListTile(
-                      title: Text("$index"),
-                      onTap: () => Navigator.of(context).pop(index),
-                    );
-                  },
-                )),
+              itemCount: 30,
+              itemBuilder: (BuildContext context, int index) {
+                return ListTile(
+                  title: Text("$index"),
+                  onTap: () => Navigator.of(context).pop(index),
+                );
+              },
+            )),
           ],
         );
         //使用AlertDialog会报错
@@ -150,7 +134,7 @@ class _FunctionalWidgetState extends State<FunctionalWidget> {
     }
   }
 
- // 自定义遮罩 等
+  // 自定义遮罩 等
   Future<bool> showDeleteConfirmCustomDialog() {
     return showCustomDialog<bool>(
       context: context,
@@ -175,10 +159,7 @@ class _FunctionalWidgetState extends State<FunctionalWidget> {
       },
     );
   }
-
-
 }
-
 
 Future<T> showCustomDialog<T>({
   @required BuildContext context,
@@ -220,4 +201,13 @@ Widget _buildMaterialDialogTransitions(
     ),
     child: child,
   );
+
+
+
+
+
+
+
+
+
 }
